@@ -51,52 +51,7 @@ REST_FRAMEWORK = {
     ]
 }
 
-# CORS Configuration
-CORS_ALLOWED_ORIGINS = [
-    "https://daymate-s7gj.onrender.com",
-    "http://localhost:3000",
-    "http://localhost:5173",
-    "http://127.0.0.1:3000",
-]
 
-# Also allow origin regex for any Render deployment
-CORS_ALLOWED_ORIGIN_REGEXES = [
-    r"^https://daymate-.*\.onrender\.com$",
-]
-
-CORS_ALLOW_CREDENTIALS = True
-
-CORS_ALLOW_METHODS = [
-    "DELETE",
-    "GET",
-    "OPTIONS",
-    "PATCH",
-    "POST",
-    "PUT",
-]
-
-CORS_ALLOW_HEADERS = [
-    'accept',
-    'accept-encoding',
-    'authorization',
-    'content-type',
-    'dnt',
-    'origin',
-    'user-agent',
-    'x-csrftoken',
-    'x-requested-with',
-]
-
-# Expose headers that the frontend can read
-CORS_EXPOSE_HEADERS = [
-    'content-type',
-    'x-csrftoken',
-]
-
-CSRF_TRUSTED_ORIGINS = [
-    "https://daymate-s7gj.onrender.com",
-    "https://daymate-django.onrender.com",
-]
 
 # Session cookie settings for cross-origin requests
 SESSION_COOKIE_SAMESITE = 'None'
@@ -108,15 +63,20 @@ CSRF_COOKIE_SAMESITE = 'None'
 CSRF_COOKIE_SECURE = True  # Only send over HTTPS
 
 MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware',  # Must be at the top
+    'daym.middleware.CorsMiddleware',  # Custom CORS - MUST BE FIRST
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    # Comment out CSRF for API testing, uncomment later if needed
+    # 'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+# Simplify CORS settings - just allow all for now
+CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_CREDENTIALS = True
 
 ROOT_URLCONF = 'daym.urls'
 
