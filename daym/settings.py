@@ -47,10 +47,6 @@ REST_FRAMEWORK = {
     ]
 }
 
-CORS_ALLOWED_ORIGINS = [
-    "https://daymate-s7gj.onrender.com",
-]
-
 CORS_ALLOW_CREDENTIALS = True
 
 CORS_ALLOW_METHODS = [
@@ -68,6 +64,9 @@ CORS_ALLOW_HEADERS = [
 
 CSRF_TRUSTED_ORIGINS = [
     "https://daymate-s7gj.onrender.com"
+]
+CORS_ALLOWED_ORIGIN_REGEXES = [
+    r"^https://daymate-s7gj\.onrender\.com$",
 ]
 
 MIDDLEWARE = [
