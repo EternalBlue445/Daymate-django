@@ -38,7 +38,7 @@ def all_task(location):
     if not news_list:
         try:
             ln = LocalNews()
-            news_list = ln.collect_all()
+            news_list = []#ln.collect_all()
         except:
             news_list = []
         cache.set(news_key, news_list, CACHE_TTL)
