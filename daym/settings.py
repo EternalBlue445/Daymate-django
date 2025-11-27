@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'corsheaders'
 ]
 
 REST_FRAMEWORK = {
@@ -46,13 +47,31 @@ REST_FRAMEWORK = {
     ]
 }
 
-CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOWED_ORIGINS = [
-    'https://daymate-s7gj.onrender.com/', 
+    "https://daymate-s7gj.onrender.com",
 ]
-CSRF_TRUSTED_ORIGINS = ['https://daymate-s7gj.onrender.com/']
+
+CORS_ALLOW_CREDENTIALS = True
+
+CORS_ALLOW_METHODS = [
+    "GET",
+    "POST",
+    "PUT",
+    "PATCH",
+    "DELETE",
+    "OPTIONS",
+]
+
+CORS_ALLOW_HEADERS = [
+    "*",
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://daymate-s7gj.onrender.com"
+]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',

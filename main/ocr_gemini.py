@@ -1,4 +1,3 @@
-from PIL import Image
 import google.generativeai as genai
 import os
 
