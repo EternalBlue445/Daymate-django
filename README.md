@@ -1,3 +1,7 @@
+# Frameworks Used
+1. Frontend: ReactJs
+2. Backend: Django
+
 # How does it work?
 1. Frontend makes a GET request on https://daymate-django.onrender.com/api/weather/{city}. Ex: /api/weather/dhaka
 2. django receives that request
@@ -5,6 +9,9 @@
    - Then the django fetches the news article from The daily star and jugantor
    - Then django combines the weather data and news article and sends it to Gemini and gets the recommendation
    - Finally, the weather data,news article and recommendation are sent to the frontend as a JSON Response.
+
+# Workflow
+Frontend hits api -> Backend receives -> fetches weather data -> fetches news articles -> sends the combined data to Gemini -> returns {weather data,local news and recommendation from Gemini} to frontend
 
 # How to use it? 
    - Render is a free hosting platform, so upon inactivity it suspends the server(frontend and backend).
