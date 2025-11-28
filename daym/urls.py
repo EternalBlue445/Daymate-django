@@ -20,7 +20,7 @@ from django.http import JsonResponse
 from django.shortcuts import render
 
 urlpatterns = [
-    path('/', lambda request: JsonResponse({"status": "running", "message": "API is live!"}), name='home'),
+    path('', lambda request: JsonResponse({"status": "running", "message": "API is live!"}), name='home'),
     path('api/', include('main.urls')),
 ]
 
