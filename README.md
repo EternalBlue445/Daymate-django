@@ -11,8 +11,8 @@
    - So, go to the Backend url first and then frontend.
    - Wait for 1 minute. Render will then restart the servers. When backend and frontend both are running then change locations to see new recommendations.
 
-# How you gonna know that backend is running? 
-"https://daymate-django.onrender.com/api/weather/dhaka" will return a json response.
+# How you gonna know that backend is running?
+"https://daymate-django.onrender.com/" will return -> {"status": "running", "message": "API is live!"} this json response.
 
 # Live 
 Frontend(live):  https://daymate-s7gj.onrender.com
