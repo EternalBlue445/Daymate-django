@@ -1,6 +1,6 @@
 # Frameworks Used
-1. Frontend: ReactJs
-2. Backend: Django
+1. Frontend: ReactJs (https://github.com/EternalBlue445/Daymate.git)
+2. Backend: Django  (https://github.com/EternalBlue445/Daymate-django.git)
 
 # How does it work?
 1. Frontend makes a GET request on https://daymate-django.onrender.com/api/weather/{city}. Ex: /api/weather/dhaka
@@ -11,14 +11,14 @@
    - Finally, the weather data,news article and recommendation are sent to the frontend as a JSON Response.
 
 # Workflow
-   - Frontend hits api 
-   - Backend receives  fetches weather data & news articles 
-   - sends the combined data to Gemini
+   - Frontend hits api (/api/weather/{any_city}) 
+   - Backend receives it and fetches weather data for that city & local news articles 
+   - sends the combined data to Gemini 
    - returns {weather data,local news and recommendation from Gemini} to frontend
 
 # It takes 1 or 2 minutes to load the server.
-## If you see this following screen, don't worry, wait for 1 minute. It will load the server. 
-![Loading](Loading.png)
+## If you see this following screen, dont't worry, wait for 1 minute. It will load the server. 
+![Loading](Screenshots/Loading.png)
 
 # How to use it? 
    - Render is a free hosting platform, so upon inactivity it suspends the server(frontend and backend).
