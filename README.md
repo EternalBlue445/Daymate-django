@@ -36,6 +36,9 @@
 
 
 # Screenshots
+## DayMate
+![Daymate](Screenshots/daymate.png)
+
 ## Location
 ![Location](Screenshots/location.png)
 
